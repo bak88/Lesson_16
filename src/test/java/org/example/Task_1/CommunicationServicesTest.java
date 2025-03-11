@@ -1,17 +1,16 @@
-package org.example;
+package org.example.Task_1;
 
+import org.example.WebDriverManadger;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CommunicationServicesTest extends WebDriverManadger {
     private CommunicationServices communicationServices;
 
     @Test
-    public void testPhonePlaceholder(){
+    public void testPhonePlaceholder() {
         communicationServices = new CommunicationServices(driver);
         String expectedPlaceholder = "Номер телефона";
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-phone")));
@@ -20,7 +19,7 @@ public class CommunicationServicesTest extends WebDriverManadger {
     }
 
     @Test
-    public void testSumPlaseholder(){
+    public void testSumPlaseholder() {
         communicationServices = new CommunicationServices(driver);
         String expectedPlaceholder = "Сумма";
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum")));
@@ -28,7 +27,7 @@ public class CommunicationServicesTest extends WebDriverManadger {
     }
 
     @Test
-    public void testEmailPlaseholder(){
+    public void testEmailPlaseholder() {
         communicationServices = new CommunicationServices(driver);
         String expectedPlaceholder = "E-mail для отправки чека";
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-email")));

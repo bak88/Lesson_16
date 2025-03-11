@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Task_1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,6 @@ public class CommunicationServices {
     private By phoneId = By.id("connection-phone");
     private By sumId = By.id("connection-sum");
     private By emailId = By.id("connection-email");
-    // private By continueButton = By.xpath("//button[@class='button button__default ']");
 
 
     public CommunicationServices(WebDriver driver) {
