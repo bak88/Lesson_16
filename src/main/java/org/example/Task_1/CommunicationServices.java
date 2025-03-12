@@ -2,6 +2,7 @@ package org.example.Task_1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CommunicationServices {
 
@@ -26,4 +27,6 @@ public class CommunicationServices {
     public String getEmailPlaceholder(){
         return driver.findElement(emailId).getAttribute("placeholder");
     }
+
+
 }

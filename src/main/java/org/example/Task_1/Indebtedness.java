@@ -9,17 +9,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Installment {
+public class Indebtedness {
 
     private WebDriver driver;
 
-    private By scoreId = By.id("score-instalment");
-    private By sumId = By.id("instalment-sum");
-    private By emailId = By.id("instalment-email");
+    private By scoreId = By.id("score-arrears");
+    private By sumId = By.id("arrears-sum");
+    private By emailId = By.id("arrears-email");
     private By selectHeader = By.xpath("//button[@class='select__header']");
-    private By serviceOptionInstallment = By.xpath("(//p[@class='select__option'])[3]");
+    private By serviceOptionInstallment = By.xpath("(//p[@class='select__option'])[4]");
 
-    public Installment(WebDriver driver) {
+    public Indebtedness(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -35,7 +35,7 @@ public class Installment {
         return driver.findElement(emailId).getAttribute("placeholder");
     }
 
-    public void selectInstallment() throws InterruptedException {
+    public void selectIndebtedness() throws InterruptedException {
         Actions actions = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 

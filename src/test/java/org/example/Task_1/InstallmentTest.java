@@ -10,7 +10,7 @@ public class InstallmentTest extends WebDriverManadger {
     private Installment installment;
 
     @Test
-    public void testScorePlaceholder() {
+    public void testScorePlaceholder() throws InterruptedException {
         installment = new Installment(driver);
         installment.selectInstallment();
         String expectedPlaceholder = "Номер счета на 44";
@@ -19,7 +19,7 @@ public class InstallmentTest extends WebDriverManadger {
     }
 
     @Test
-    public void testSumPlaseholder() {
+    public void testSumPlaseholder() throws InterruptedException {
         installment = new Installment(driver);
         installment.selectInstallment();
         String expectedPlaceholder = "Сумма";
@@ -28,7 +28,7 @@ public class InstallmentTest extends WebDriverManadger {
     }
 
     @Test
-    public void testEmailPlaseholder() {
+    public void testEmailPlaseholder() throws InterruptedException {
         installment = new Installment(driver);
         installment.selectInstallment();
         String expectedPlaceholder = "E-mail для отправки чека";

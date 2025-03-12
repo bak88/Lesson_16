@@ -23,7 +23,7 @@ public class WebDriverManadger {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://www.mts.by/");
     }
 
