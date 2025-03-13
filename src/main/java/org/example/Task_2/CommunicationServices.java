@@ -31,10 +31,17 @@ public class CommunicationServices {
         driver.findElement(continueButton).click();
     }
 
-//    public void checkSum() {
-//        String sumHeader = driver.findElement(By.xpath("//div[@class='pay-description__cost']")).getAttribute("outerText");
-//        String sumButton = driver.findElement(By.xpath("//button[@class='colored disabled']")).getAttribute("outerText");
-//
-//    }
+    public String getPhoneNumber() {
+        return driver.findElement(By.id("connection-phone")).getAttribute("value");
+
+    }
+
+    public String getSum() {
+        return driver.findElement(By.id("connection-sum")).getAttribute("value");
+    }
+
+    public String getSumButton(){
+        return driver.findElement(By.xpath("//button[@class='colored disabled']")).getAttribute("innerText");
+    }
 
 }
