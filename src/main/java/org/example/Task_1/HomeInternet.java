@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomeInternet {
 
@@ -31,12 +35,12 @@ public class HomeInternet {
     }
 
     public void selectHomeInternet() {
-        Actions actions = new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        WebElement header = driver.findElement(selectHeader);
-        actions.moveToElement(header).click().build().perform();
+        WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(selectHeader));
+        header.click();
 
-        WebElement option = driver.findElement(serviceOptionHomeInternet);
-        actions.moveToElement(option).click().build().perform();
+        WebElement option = wait.until(ExpectedConditions.elementToBeClickable(serviceOptionHomeInternet));
+        option.click();
     }
 }

@@ -17,7 +17,7 @@ public class Indebtedness {
     private By sumId = By.id("arrears-sum");
     private By emailId = By.id("arrears-email");
     private By selectHeader = By.xpath("//button[@class='select__header']");
-    private By serviceOptionInstallment = By.xpath("(//p[@class='select__option'])[4]");
+    private By serviceOptionInstallment = By.xpath("//p[text()='Задолженность']");
 
     public Indebtedness(WebDriver driver) {
         this.driver = driver;
@@ -36,16 +36,13 @@ public class Indebtedness {
     }
 
     public void selectIndebtedness() throws InterruptedException {
-        Actions actions = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        WebElement header = driver.findElement(selectHeader);
-        actions.moveToElement(header).click().build().perform();
-
-        Thread.sleep(1000);
+        WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(selectHeader));
+        header.click();
 
         WebElement option = wait.until(ExpectedConditions.elementToBeClickable(serviceOptionInstallment));
-        actions.moveToElement(option).click().build().perform();
+        option.click();
 
     }
 }
