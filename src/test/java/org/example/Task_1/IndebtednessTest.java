@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class IndebtednessTest extends WebDriverManadger {
 
     Indebtedness indebtedness;
+
     @Test
     public void testScorePlaceholder() throws InterruptedException {
         indebtedness = new Indebtedness(driver);

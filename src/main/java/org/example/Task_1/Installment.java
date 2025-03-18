@@ -1,5 +1,6 @@
 package org.example.Task_1;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,17 +24,21 @@ public class Installment {
         this.driver = driver;
     }
 
+    @Step
     public String getScorePlaceholder(){
         return driver.findElement(scoreId).getAttribute("placeholder");
     }
 
+    @Step
     public String getSumPlaceholder(){
         return driver.findElement(sumId).getAttribute("placeholder");
     }
 
+    @Step
     public String getEmailPlaceholder(){
         return driver.findElement(emailId).getAttribute("placeholder");
     }
+
 
     public void selectInstallment() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
