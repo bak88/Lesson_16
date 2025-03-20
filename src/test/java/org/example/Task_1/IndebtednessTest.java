@@ -9,30 +9,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class IndebtednessTest extends WebDriverManadger {
 
     Indebtedness indebtedness;
+
     @Test
-    public void testScorePlaceholder() throws InterruptedException {
+    public void testScorePlaceholder() {
         indebtedness = new Indebtedness(driver);
         indebtedness.selectIndebtedness();
-        String expectedPlaceholder = "Номер счета на 2073";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("score-arrears")));
-        Assertions.assertEquals(expectedPlaceholder, indebtedness.getScorePlaceholder());
+        Assertions.assertEquals("Номер счета на 2073", indebtedness.getScorePlaceholder());
     }
 
     @Test
-    public void testSumPlaseholder() throws InterruptedException {
+    public void testSumPlaseholder() {
         indebtedness = new Indebtedness(driver);
         indebtedness.selectIndebtedness();
-        String expectedPlaceholder = "Сумма";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("arrears-sum")));
-        Assertions.assertEquals(expectedPlaceholder, indebtedness.getSumPlaceholder());
+        Assertions.assertEquals("Сумма", indebtedness.getSumPlaceholder());
     }
 
     @Test
-    public void testEmailPlaseholder() throws InterruptedException {
+    public void testEmailPlaseholder() {
         indebtedness = new Indebtedness(driver);
         indebtedness.selectIndebtedness();
-        String expectedPlaceholder = "E-mail для отправки чека";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("arrears-email")));
-        Assertions.assertEquals(expectedPlaceholder, indebtedness.getEmailPlaceholder());
+        Assertions.assertEquals("E-mail для отправки чека", indebtedness.getEmailPlaceholder());
     }
 }

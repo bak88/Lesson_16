@@ -12,25 +12,19 @@ public class CommunicationServicesTest extends WebDriverManadger {
     @Test
     public void testPhonePlaceholder() {
         communicationServices = new CommunicationServices(driver);
-        String expectedPlaceholder = "Номер телефона";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-phone")));
-        Assertions.assertEquals(expectedPlaceholder, communicationServices.getPhonePlaceholder());
+        Assertions.assertEquals("Номер телефона", communicationServices.getPhonePlaceholder());
 
     }
 
     @Test
     public void testSumPlaseholder() {
         communicationServices = new CommunicationServices(driver);
-        String expectedPlaceholder = "Сумма";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum")));
-        Assertions.assertEquals(expectedPlaceholder, communicationServices.getSumPlaceholder());
+        Assertions.assertEquals("Сумма", communicationServices.getSumPlaceholder());
     }
 
     @Test
     public void testEmailPlaseholder() {
         communicationServices = new CommunicationServices(driver);
-        String expectedPlaceholder = "E-mail для отправки чека";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-email")));
-        Assertions.assertEquals(expectedPlaceholder, communicationServices.getEmailPlaceholder());
+        Assertions.assertEquals("E-mail для отправки чека", communicationServices.getEmailPlaceholder());
     }
 }

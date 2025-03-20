@@ -15,6 +15,8 @@ public class WebDriverManadger {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
+    private static final String BASE_URL = "https://www.mts.by";
+
     @BeforeAll
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
@@ -23,8 +25,8 @@ public class WebDriverManadger {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://www.mts.by/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.get(BASE_URL);
     }
 
     @AfterEach

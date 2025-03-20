@@ -13,9 +13,7 @@ public class HomeInternetTest extends WebDriverManadger {
     public void testPhonePlaceholder() {
         homeInternet = new HomeInternet(driver);
         homeInternet.selectHomeInternet();
-        String expectedPlaceholder = "Номер абонента";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("internet-phone")));
-        Assertions.assertEquals(expectedPlaceholder, homeInternet.getPhonePlaceholder());
+        Assertions.assertEquals("Номер абонента", homeInternet.getPhonePlaceholder());
 
     }
 
@@ -23,17 +21,13 @@ public class HomeInternetTest extends WebDriverManadger {
     public void testSumPlaseholder() {
         homeInternet = new HomeInternet(driver);
         homeInternet.selectHomeInternet();
-        String expectedPlaceholder = "Сумма";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum")));
-        Assertions.assertEquals(expectedPlaceholder, homeInternet.getSumPlaceholder());
+        Assertions.assertEquals("Сумма", homeInternet.getSumPlaceholder());
     }
 
     @Test
     public void testEmailPlaseholder() {
         homeInternet = new HomeInternet(driver);
         homeInternet.selectHomeInternet();
-        String expectedPlaceholder = "E-mail для отправки чека";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-email")));
-        Assertions.assertEquals(expectedPlaceholder, homeInternet.getEmailPlaceholder());
+        Assertions.assertEquals("E-mail для отправки чека", homeInternet.getEmailPlaceholder());
     }
 }
